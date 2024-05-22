@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLNhanSu" Class="QLNSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CANH-DHQN\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True" SettingsObjectName="QLNS_WPF_LINQ.Properties.Settings" SettingsPropertyName="QLNhanSuConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CHUCVU" Member="CHUCVUs">
+    <Type Name="CHUCVU">
+      <Column Name="MaChucVu" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PhuCapCV" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="CHUCVU_DSNV" Member="DSNVs" ThisKey="MaChucVu" OtherKey="MaChucVu" Type="DSNV" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DMPHONG" Member="DMPHONGs">
+    <Type Name="DMPHONG">
+      <Column Name="MaPhong" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DMPHONG_DSNV" Member="DSNVs" ThisKey="MaPhong" OtherKey="MaPhong" Type="DSNV" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DSNV" Member="DSNVs">
+    <Type Name="DSNV">
+      <Column Name="MaNV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SoDT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HeSoLuong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaChucVu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="CHUCVU_DSNV" Member="CHUCVU" ThisKey="MaChucVu" OtherKey="MaChucVu" Type="CHUCVU" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="DMPHONG_DSNV" Member="DMPHONG" ThisKey="MaPhong" OtherKey="MaPhong" Type="DMPHONG" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+</Database>

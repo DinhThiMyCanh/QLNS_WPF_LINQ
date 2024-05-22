@@ -1,0 +1,86 @@
+﻿<Window x:Class="QLNS_WPF_LINQ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLNS_WPF_LINQ"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Thông tin nhân viên" Height="150">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Mã NV" Grid.Column="0" Grid.Row="0"/>
+                    <TextBlock Text="Họ và tên" Grid.Column="0" Grid.Row="1"/>
+                    <TextBlock Text="Ngày sinh" Grid.Column="0" Grid.Row="2"/>
+                    <TextBlock Text="Hệ số lương" Grid.Column="2" Grid.Row="0"/>
+                    <TextBlock Text="Số điện thoại" Grid.Column="2" Grid.Row="1"/>
+                    <TextBlock Text="Tên phòng" Grid.Column="2" Grid.Row="2"/>
+                    <TextBlock Text="Tên chức vụ" Grid.Column="2" Grid.Row="3"/>
+
+                    <TextBox x:Name="txtMaNV" Grid.Column="1" Grid.Row="0" IsReadOnly="True"/>
+                    <TextBox x:Name="txtHoTen" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="txtHSL" Grid.Column="3" Grid.Row="0"/>
+                    <TextBox x:Name="txtSoDT" Grid.Column="3" Grid.Row="1"/>
+
+                    <DatePicker x:Name="dtpNgaySinh" Grid.Column="1" Grid.Row="2"/>
+
+                    <GroupBox Header="Giới tính" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="rdNam" Content="Nam" Width="70" Margin="50,1"/>
+                            <RadioButton x:Name="rdNu" Content="Nữ" Width="70"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <ComboBox x:Name="cboTenPhong" Grid.Column="3" Grid.Row="2"/>
+                    <ComboBox x:Name="cboChucVu" Grid.Column="3" Grid.Row="3"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Tìm kiếm" Height="50">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txtTimKiem" Text="" Width="300" Margin="70,1" />
+                    <Button x:Name="btnTimKiem" Content="Tìm NV" Width="100"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Danh sách nhân viên">
+                <DataGrid x:Name="DataGrid" Height="150" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Mã nhân viên" Width="100" Binding="{Binding MaNV}"/>
+                        <DataGridTextColumn Header="Tên nhân viên" Width="150" Binding="{Binding HoTen}"/>
+                        <DataGridTextColumn Header="Ngày Sinh" Width="100" Binding="{Binding NgaySinh}"/>
+                        <DataGridTextColumn Header="Giới Tính" Width="100" Binding="{Binding GioiTinh}"/>
+                        <DataGridTextColumn Header="Số điện Thoại" Width="100" Binding="{Binding SoDT}"/>
+                        <DataGridTextColumn Header="Hệ số lương" Width="100" Binding="{Binding HeSoLuong}"/>
+                        <DataGridTextColumn Header="Mã phòng ban" Width="100" Binding="{Binding MaPhong}"/>
+                        <DataGridTextColumn Header="Mã chuc vu" Width="100" Binding="{Binding MaChucVu}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+
+            <GroupBox Header="Chức năng" Height="50" Width="500">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnThem" Content="Thêm" Width="70" Margin="10,1"/>
+                    <Button x:Name="btnSua" Content="Sửa" Width="70" Margin="10,1"/>
+                    <Button x:Name="btnXoa" Content="Xóa" Width="70" Margin="10,1"/>
+                    <Button x:Name="btnThongKe" Content="Thống kê" Width="70" Margin="10,1"/>
+                    <Button x:Name="btnLamMoi" Content="Làm mới" Width="70" Margin="10,1"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

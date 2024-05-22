@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QLNS">
+  <DataContextMoniker Name="/QLNSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6db24658-bf92-45f9-8956-2dca5aa4af70" absoluteBounds="5, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/QLNSDataContext/CHUCVU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5447cfc2-8bbb-4d92-abc7-878bd6a52fe1" absoluteBounds="5.015, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2a22984-61ac-4f2c-8c52-aa496ce9b83e" absoluteBounds="0.5, 0.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/QLNSDataContext/DMPHONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e80cfc2-f7c2-4264-b8a9-cb866afc035b" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="07eaaf07-71c5-4c91-8fc1-5aaaa3e80ce0" absoluteBounds="3.25, 2.875, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/QLNSDataContext/DSNV" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cd15126-c501-4122-bea4-b2fda6146146" absoluteBounds="3.265, 3.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 1.69314697265625); (4.3125 : 1.69314697265625); (4.3125 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLNSDataContext/CHUCVU/CHUCVU_DSNV" />
+      <nodes>
+        <classShapeMoniker Id="6db24658-bf92-45f9-8956-2dca5aa4af70" />
+        <classShapeMoniker Id="07eaaf07-71c5-4c91-8fc1-5aaaa3e80ce0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5 : 1.94399251302083); (1.5 : 4.04890055338542); (3.25 : 4.04890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLNSDataContext/DMPHONG/DMPHONG_DSNV" />
+      <nodes>
+        <classShapeMoniker Id="e2a22984-61ac-4f2c-8c52-aa496ce9b83e" />
+        <classShapeMoniker Id="07eaaf07-71c5-4c91-8fc1-5aaaa3e80ce0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
